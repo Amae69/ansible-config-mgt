@@ -32,6 +32,11 @@
     hosts: webservers, nfs, lb, db
     become: yes
     tasks:
+ 
+  - name: create directory, file and set timezone on all servers
+    hosts: webservers, nfs, lb, db
+    become: yes
+    tasks:
 
       - name: create a directory
         file:
@@ -46,4 +51,4 @@
       - name: set timezone
         timezone:
           name: Africa/Lagos
-        
+
